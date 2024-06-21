@@ -1,0 +1,9 @@
+#In this file whatever library is used to create this model we r mentioning here !!!
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+flask
+#-e . #whenever requirement.txt file library installing when it see -e .  execution code it automatically trigger the setup.py file to create this model as package
+
