@@ -5,5 +5,10 @@ scikit-learn
 matplotlib
 seaborn
 flask
+python-dotenv
+PyMySQL
+Flask-SQLAlchemy
+Flask-Login
+flask-mysql-connector
 #-e . #whenever requirement.txt file library installing when it see -e .  execution code it automatically trigger the setup.py file to create this model as package
 
