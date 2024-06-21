@@ -1,0 +1,2 @@
+#this file we used to track the error or custom exception occur during runtime execution of code by interpreters
+#and tracked error saving into text file with.log extension and all text file saving into logs directory
