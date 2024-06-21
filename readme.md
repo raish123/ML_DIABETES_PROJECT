@@ -22,9 +22,9 @@ The dataset consists of 9 columns, each representing a specific medical measurem
 
 ## Data Summary
 
-- **Total Records**: 768
-- **Positive Cases (Outcome = 1)**: 268
-- **Negative Cases (Outcome = 0)**: 500
+- **Total Records**: 2000
+- **Positive Cases (Outcome = 1)**: 768
+- **Negative Cases (Outcome = 0)**: 1232
 
 ## Usage
 
