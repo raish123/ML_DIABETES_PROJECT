@@ -3,7 +3,6 @@
 import pandas as pd
 from source.exception import CustomException
 from source.logger import logging
-from source.utils import read_sql_data
 import os,sys
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -30,7 +29,7 @@ class DataIngestion():
         try:
             logging.info('Initiate the Data Ingestion Process')
             #calling the read_sql_data function and storing the return file in it
-            df = read_sql_data()
+            df = pd.read_csv(r'artifacts\raw.csv')
             logging.info('Data Read SuccessFully From Database\n%s',df.head())
 
             logging.info('Now creating artifact folder and storing raw,train,test data')
