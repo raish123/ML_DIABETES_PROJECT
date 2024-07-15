@@ -10,5 +10,6 @@ PyMySQL
 Flask-SQLAlchemy
 Flask-Login
 flask-mysql-connector
+dill
 #-e . #whenever requirement.txt file library installing when it see -e .  execution code it automatically trigger the setup.py file to create this model as package
 
