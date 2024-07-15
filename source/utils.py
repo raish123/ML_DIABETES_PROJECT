@@ -2,40 +2,20 @@
 from source.logger import logging
 from source.exception import CustomException
 import os,sys
-from dotenv import load_dotenv
-import pymysql
-import pandas as pd
-#loading the important parameter which is present in dotenv class by creating load_env object
-load_dotenv()
+import numpy as np,dill
 
-db_name = os.getenv('database_name')
-db_username = os.getenv('database_username')
-db_port = os.getenv('database_port')
-db_host = os.getenv('database_host')
-db_pass = os.getenv('database_password')
 
-#now creating user defined function to read the structured data from database and return as df object
-def read_sql_data():
-    logging.info('Reading The Data From SQL Server')
+
+def Save_object(filepath,object):
+    logging.info('Here in Utils we r Creating Save object Function will Save model and preprocessor files to artifacts Folder')
     try:
-        logging.info('Using PYMysql Connector for connecting MYSQL Database through Python')
-        conn = pymysql.connect(
-            host=db_host,
-            user=db_username,
-            password=db_pass,
-            db=db_name,
-            port = int(db_port)
-        )
-        logging.info('Database Connected Successfully')
-        cur = conn.cursor()
-        logging.info('Storing the Database Table into DF object Using Pandas')
-        df = pd.read_sql_query('select * from kaggle_diabetes',conn)
-
-        return df 
-    
+        logging.info('Now Checking Filepath Exist or not')
+        if not os.path.exists(filepath):
+            os.makedirs(filepath,exist_ok=True)
+        with open(filepath,'wb') as file:
+            dill.dump(object,file)
+        logging.info('Object Save Into Artfacts Folder')
     except Exception as e:
         raise CustomException(e,sys)
-
-
 
 
