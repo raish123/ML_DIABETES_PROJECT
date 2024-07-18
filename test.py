@@ -5,6 +5,7 @@ from src.exception import CustomException
 import os,sys
 from source.components.data_ingestion import DataIngestion,DataIngestionConfig
 from source.components.data_transformation import DataTransformation,DataTransformationConfig
+from source.components.model_training import ModelTrainer,ModelTrainerConfig
 
 def main():
     try:
@@ -17,6 +18,10 @@ def main():
        
 
        train_array,test_array,_ = dt.initate_data_transformation(train_path=train_path,test_path=test_path,raw_path=raw_path)
+
+       #creating an object of ModelTrainer class 
+       mt = ModelTrainer()
+       mt.initiate_model_training(train_array=train_array,test_array=test_array)
 
        
 
