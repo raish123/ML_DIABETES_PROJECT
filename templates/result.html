@@ -1,0 +1,14 @@
+{% extends "home.html" %}
+
+{% block title %}
+<title>
+    Flask-Predictionresult
+</title>
+{% endblock %}
+
+
+{% block main %}
+<main>
+    <h2>Person will have {% if result==0 %}No {% else %}Yes {% endif %} Diabetes</h2>
+</main>
+{% endblock %}
