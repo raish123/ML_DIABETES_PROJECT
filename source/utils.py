@@ -55,3 +55,12 @@ def Evaluate_model(models,param_grid,x_train,y_train,x_test,y_test):
         raise CustomException(e,sys)
     
     
+#creating userdefined function to unpickle the file
+def LoadObject(filepath):
+    try:
+        with open(filepath,'rb') as file:
+            object = dill.load(file)
+
+        return object
+    except Exception as e:
+        raise CustomException(e,sys)
