@@ -42,9 +42,9 @@ jobs:
       - name: Build, tag, and push image to Docker Hub
         id: build-image
         run: |
-          docker build -t raish123/insuranceclaim:latest .
-          docker push raish123/insuranceclaim:latest
-          echo "::set-output name=image::raish123/insuranceclaim:latest"
+          docker build -t raish123/diabetes-ml-project:latest .
+          docker push raish123/diabetes-ml-project:latest
+          echo "::set-output name=image::raish123/diabetes-ml-project:latest"
 
   Continuous-Deployment:
     needs: build-and-push-dockerhub-image
@@ -61,7 +61,7 @@ jobs:
 
       - name: Pull latest image from Docker Hub
         run: |
-          docker pull raish123/insuranceclaim:latest
+          docker pull raish123/diabetes-ml-project:latest
 
       # - name: Stop and remove container if running
       #   run: |
