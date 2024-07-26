@@ -2,7 +2,9 @@
 from flask import Flask, render_template, redirect, url_for, request
 from flask_login import current_user
 from source.pipelines.predict_pipeline import PredictModel, CustomData
-import logging
+from source.exception import CustomException
+from source.logger import logging
+import os,sys
 
 # Creating an object of the Flask class
 app = Flask(__name__, template_folder='templates', static_folder='static')
@@ -10,8 +12,6 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 # Creating a secret key to maintain the session for the user
 app.secret_key = 'thisissecretkeyforsession'
 
-# Setting up logging
-logging.basicConfig(level=logging.DEBUG)
 
 # Creating a route to show the index webpage
 @app.route('/')
@@ -53,8 +53,8 @@ def prediction():
         msg = "To Reach to Prediction Page...Login Required "
         return render_template('predict.html', msg=msg)
     except Exception as e:
-        logging.error("Error during prediction: %s", e)
-        return render_template('error.html', error=str(e))
+        raise CustomException(e,sys)
+        
 
 # Creating route for result
 @app.route('/result', methods=['GET', 'POST'])
