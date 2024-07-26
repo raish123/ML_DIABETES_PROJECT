@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains a dataset related to diabetes, which includes various medical predictor variables and one target variable, Outcome. The dataset is useful for predictive modeling and machine learning applications, particularly in the context of health and medical data analysis.
+This repository contains a dataset related to  diabetes, which includes various medical predictor variables and one target variable, Outcome. The dataset is useful for predictive modeling and machine learning applications, particularly in the context of health and medical data analysis.
 
 ## Dataset Description
 
