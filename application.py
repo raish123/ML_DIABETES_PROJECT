@@ -3,7 +3,7 @@
 
 # Importing all the necessary libraries used in this file
 from flask import Flask, render_template, redirect, url_for, request
-from flask_login import current_user
+from flask_login import current_user,login_user
 from source.pipelines.predict_pipeline import PredictModel,CustomData
 
 # Creating an object of the Flask class
