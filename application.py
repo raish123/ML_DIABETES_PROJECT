@@ -52,10 +52,7 @@ def prediction():
         result = pm.Predict(feature=df)
 
 
-        return render_template('result.html',result=result[0])
-
-    msg = "To Reach to Prediction Page...Login Required "
-    return render_template('predict.html',msg=msg)
+        return render_template('predict.html',result=result[0])
 
 
 
